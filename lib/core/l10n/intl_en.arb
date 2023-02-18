@@ -1,1 +1,6 @@
-{}
+{
+    "errorFailureToGetTvShows": "Error: Failure to get TV shows",
+
+    "textSearch": "Search",
+    "textAllTvShows": "All TV Shows"
+}

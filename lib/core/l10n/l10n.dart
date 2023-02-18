@@ -49,6 +49,36 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Error: Failure to get TV shows`
+  String get errorFailureToGetTvShows {
+    return Intl.message(
+      'Error: Failure to get TV shows',
+      name: 'errorFailureToGetTvShows',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search`
+  String get textSearch {
+    return Intl.message(
+      'Search',
+      name: 'textSearch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All TV Shows`
+  String get textAllTvShows {
+    return Intl.message(
+      'All TV Shows',
+      name: 'textAllTvShows',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

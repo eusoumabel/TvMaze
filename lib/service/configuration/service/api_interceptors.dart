@@ -2,8 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:tv_maze/core/util/safe_log_util.dart';
 
 class SafeInterceptions extends QueuedInterceptorsWrapper {
-  final Dio _dio;
-  SafeInterceptions(this._dio);
+  final Dio dio;
+  SafeInterceptions(this.dio);
 
   @override
   Future onRequest(

@@ -11,7 +11,7 @@ ThemeData get dark => FlexThemeData.dark(
       visualDensity: FlexColorScheme.comfortablePlatformDensity,
       useMaterial3: true,
       swapLegacyOnMaterial3: true,
-      fontFamily: GoogleFonts.inter().fontFamily,
+      fontFamily: GoogleFonts.poppins().fontFamily,
     );
 
 ThemeData get light => FlexThemeData.light(
@@ -23,7 +23,7 @@ ThemeData get light => FlexThemeData.light(
       visualDensity: FlexColorScheme.comfortablePlatformDensity,
       useMaterial3: true,
       swapLegacyOnMaterial3: true,
-      fontFamily: GoogleFonts.inter().fontFamily,
+      fontFamily: GoogleFonts.poppins().fontFamily,
     );
 
 extension ThemeExtension on BuildContext {

@@ -1,12 +1,5 @@
-// ○ Name
-// ○ Poster
-// ○ Days and time during which the series airs
-// ○ Genres
-// ○ Summary
-// ○ List of episodes separated by season
-
 class TvShowModel {
-  int? id;
+  num? id;
   String? name;
   ScheduleModel? schedule;
   List<String>? genres;
@@ -75,7 +68,7 @@ class ScheduleModel {
 }
 
 class RatingModel {
-  double? average;
+  num? average;
 
   RatingModel({this.average});
 
@@ -87,7 +80,7 @@ class RatingModel {
 }
 
 class NetworkModel {
-  int? id;
+  num? id;
   String? name;
   CountryModel? country;
   String? officialSite;
