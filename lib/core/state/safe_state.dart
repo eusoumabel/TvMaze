@@ -13,7 +13,7 @@ abstract class SafeState<V extends StatefulWidget, C extends SafeController>
     return Modular.get<T>(defaultValue: defaultValue);
   }
 
-  late C bloc;
+  late C controller;
   bool isExecuteInit = true;
   bool performFocusActions = false;
 
@@ -22,11 +22,11 @@ abstract class SafeState<V extends StatefulWidget, C extends SafeController>
   @override
   void initState() {
     super.initState();
-    bloc = SafeState.get<C>();
+    controller = SafeState.get<C>();
     beforeInit();
     if (isExecuteInit) {
       Future.delayed(Duration.zero, () async {
-        await bloc.init();
+        await controller.init();
         WidgetsBinding.instance.addPostFrameCallback(
           (_) => performFocusActions = true,
         );
@@ -38,7 +38,7 @@ abstract class SafeState<V extends StatefulWidget, C extends SafeController>
 
   @override
   void dispose() {
-    bloc.dispose();
+    controller.dispose();
     super.dispose();
   }
 
@@ -48,32 +48,32 @@ abstract class SafeState<V extends StatefulWidget, C extends SafeController>
     return FocusDetector(
       onFocusGained: () {
         if (performFocusActions) {
-          bloc.onFocusGained();
+          controller.onFocusGained();
         }
       },
       onFocusLost: () {
         if (performFocusActions) {
-          bloc.onFocusLost();
+          controller.onFocusLost();
         }
       },
       onForegroundGained: () {
         if (performFocusActions) {
-          bloc.onForegroundGained();
+          controller.onForegroundGained();
         }
       },
       onForegroundLost: () {
         if (performFocusActions) {
-          bloc.onForegroundLost();
+          controller.onForegroundLost();
         }
       },
       onVisibilityGained: () {
         if (performFocusActions) {
-          bloc.onVisibilityGained();
+          controller.onVisibilityGained();
         }
       },
       onVisibilityLost: () {
         if (performFocusActions) {
-          bloc.onVisibilityLost();
+          controller.onVisibilityLost();
         }
       },
       child: buildDetector(context),
