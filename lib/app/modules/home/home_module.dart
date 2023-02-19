@@ -1,6 +1,8 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:tv_maze/app/modules/home/domain/use_case/get_tv_show_list_use_case.dart';
+import 'package:tv_maze/domain/use_case/get_tv_show_list_use_case.dart';
 import 'package:tv_maze/app/modules/home/presenter/page/home_page.dart';
+import 'package:tv_maze/app/modules/search/presenter/page/search_page.dart';
+import 'package:tv_maze/app/modules/search/search_module.dart';
 
 import 'presenter/controller/home_controller.dart';
 import 'presenter/store/home_store.dart';
@@ -23,5 +25,6 @@ class HomeModule extends Module {
       Modular.initialRoute,
       child: (context, args) => const HomePage(),
     ),
+    ModuleRoute(SearchPage.route, module: SearchModule()),
   ];
 }

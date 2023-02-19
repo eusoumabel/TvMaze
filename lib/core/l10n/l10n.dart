@@ -60,6 +60,46 @@ class S {
     );
   }
 
+  /// `We didn't find any tv shows that matches the search.`
+  String get errorTvShowsNotFound {
+    return Intl.message(
+      'We didn\'t find any tv shows that matches the search.',
+      name: 'errorTvShowsNotFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Exception: We didn't find any tv shows that matches the search.`
+  String get exceptionTvShowsNotFound {
+    return Intl.message(
+      'Exception: We didn\'t find any tv shows that matches the search.',
+      name: 'exceptionTvShowsNotFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong, try again soon`
+  String get errorTvShows {
+    return Intl.message(
+      'Something went wrong, try again soon',
+      name: 'errorTvShows',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error: Failure to search TV shows`
+  String get errorFailureToSearchTvShows {
+    return Intl.message(
+      'Error: Failure to search TV shows',
+      name: 'errorFailureToSearchTvShows',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Search`
   String get textSearch {
     return Intl.message(
@@ -75,6 +115,16 @@ class S {
     return Intl.message(
       'All TV Shows',
       name: 'textAllTvShows',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search TV Shows`
+  String get textSearchShows {
+    return Intl.message(
+      'Search TV Shows',
+      name: 'textSearchShows',
       desc: '',
       args: [],
     );

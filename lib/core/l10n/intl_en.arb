@@ -1,6 +1,11 @@
 {
     "errorFailureToGetTvShows": "Error: Failure to get TV shows",
+    "errorTvShowsNotFound": "We didn't find any tv shows that matches the search.",
+    "exceptionTvShowsNotFound": "Exception: We didn't find any tv shows that matches the search.",
+    "errorTvShows":"Something went wrong, try again soon",
+    "errorFailureToSearchTvShows": "Error: Failure to search TV shows",
 
     "textSearch": "Search",
-    "textAllTvShows": "All TV Shows"
+    "textAllTvShows": "All TV Shows",
+    "textSearchShows": "Search TV Shows"
 }

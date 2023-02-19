@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tv_maze/app/design/style/spacing/spacing_style.dart';
 import 'package:tv_maze/app/design/style/text/text_styles.dart';
 import 'package:tv_maze/app/design/widgets/safe_loading.dart';
-import 'package:tv_maze/app/modules/home/domain/entities/tv_show_entity.dart';
+import 'package:tv_maze/domain/entities/tv_show_entity.dart';
 import 'package:tv_maze/core/constants/string_constants.dart';
 
 class TvShowWidget extends StatelessWidget {
@@ -36,7 +36,9 @@ class TvShowWidget extends StatelessWidget {
                 ),
               ),
               placeholder: (_, url) => const Center(child: SafeLoading()),
-              errorWidget: (_, url, error) => const Icon(Icons.error),
+              errorWidget: (_, url, error) => const Center(
+                child: Icon(Icons.error),
+              ),
             ),
             //TODO add like button
             // Positioned(
@@ -56,8 +58,8 @@ class TvShowWidget extends StatelessWidget {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      Theme.of(context).cardColor.withOpacity(0),
-                      Theme.of(context).cardColor,
+                      Colors.transparent,
+                      Colors.grey.shade800.withOpacity(0.3),
                     ],
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
@@ -72,6 +74,7 @@ class TvShowWidget extends StatelessWidget {
                       tvShow.name!,
                       style: context.h6!.copyWith(
                         fontWeight: FontWeight.bold,
+                        color: Colors.grey.shade200,
                       ),
                     ),
                   ),
