@@ -16,7 +16,7 @@ class AppWidget extends StatelessWidget {
       title: 'TvMaze',
       theme: light,
       darkTheme: dark,
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.system,
       supportedLocales: S.delegate.supportedLocales,
       localizationsDelegates: const [
         S.delegate,
