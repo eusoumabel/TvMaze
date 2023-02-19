@@ -1,7 +1,11 @@
 import 'package:tv_maze/core/constants/string_constants.dart';
+import 'package:tv_maze/domain/entities/episode_entity.dart';
 import 'package:tv_maze/service/model/tv_show_model.dart';
 
 class TvShowEntity extends TvShowModel {
+  final List<EpisodeEntity>? episodes;
+  final int? seasons;
+
   TvShowEntity({
     super.id,
     super.name,
@@ -16,6 +20,9 @@ class TvShowEntity extends TvShowModel {
     super.premiered,
     super.schedule,
     super.officialSite,
+    super.averageRuntime,
+    this.episodes,
+    this.seasons,
   });
 
   TvShowEntity copyWith({
@@ -32,6 +39,9 @@ class TvShowEntity extends TvShowModel {
     String? premiered,
     ScheduleModel? schedule,
     String? officialSite,
+    int? averageRuntime,
+    List<EpisodeEntity>? episodes,
+    int? seasons,
   }) {
     return TvShowEntity(
       id: id ?? this.id,
@@ -47,6 +57,9 @@ class TvShowEntity extends TvShowModel {
       premiered: premiered ?? this.premiered,
       schedule: schedule ?? this.schedule,
       officialSite: officialSite ?? this.officialSite,
+      averageRuntime: averageRuntime ?? this.averageRuntime,
+      episodes: episodes ?? this.episodes,
+      seasons: seasons ?? this.seasons,
     );
   }
 
@@ -65,6 +78,7 @@ class TvShowEntity extends TvShowModel {
       premiered: model.premiered ?? StringConstants.empty,
       schedule: model.schedule ?? ScheduleModel(),
       officialSite: model.officialSite ?? StringConstants.empty,
+      averageRuntime: model.averageRuntime ?? 0,
     );
   }
 }

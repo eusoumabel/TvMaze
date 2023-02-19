@@ -10,7 +10,7 @@ import 'package:tv_maze/core/state/safe_builder.dart';
 import 'package:tv_maze/core/state/safe_state.dart';
 
 class SearchPage extends StatefulWidget {
-  static const route = '/search';
+  static const route = 'search';
   const SearchPage({super.key});
 
   @override
@@ -87,6 +87,9 @@ class _SearchPageState extends SafeState<SearchPage, SearchController> {
                     child: GridTvShowsWidget(
                       list: listSearchedTvShows,
                       scrollController: controller.store.scrollController,
+                      goToTvShow: (tvShow) => controller.goToTvShow(
+                        tvShow: tvShow,
+                      ),
                     ),
                   );
                 }

@@ -4,10 +4,10 @@ import 'package:tv_maze/core/interfaces/safe_use_case.dart';
 import 'package:tv_maze/core/l10n/l10n.dart';
 import 'package:tv_maze/service/remote/tv_show/tv_show_repository.dart';
 
-class GetTvShowUseCase extends SafeUseCase {
+class GetTvShowListUseCase extends SafeUseCase {
   final TvShowRepository repository;
 
-  GetTvShowUseCase(this.repository);
+  GetTvShowListUseCase(this.repository);
 
   AsyncResult<List<TvShowEntity>, Exception> call() async {
     logInfo();

@@ -9,7 +9,7 @@ import 'package:tv_maze/core/state/safe_builder.dart';
 import 'package:tv_maze/core/state/safe_state.dart';
 
 class HomePage extends StatefulWidget {
-  static const route = '/home';
+  static const route = '/home/';
   const HomePage({super.key});
 
   @override
@@ -46,6 +46,7 @@ class _HomePageState extends SafeState<HomePage, HomeController> {
             return GridTvShowsWidget(
               list: listTvShows,
               scrollController: controller.store.scrollController,
+              goToTvShow: (tvShow) => controller.goToTvShow(tvShow: tvShow),
             );
           },
         ),

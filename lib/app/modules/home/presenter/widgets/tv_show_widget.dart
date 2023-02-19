@@ -17,71 +17,61 @@ class TvShowWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: AspectRatio(
-        aspectRatio: 0.7,
-        child: Stack(
-          children: [
-            CachedNetworkImage(
-              imageUrl: tvShow.image?.original ?? StringConstants.empty,
-              imageBuilder: (context, imageProvider) => Container(
-                decoration: BoxDecoration(
-                  color: Theme.of(context).cardColor,
-                  borderRadius: BorderRadius.circular(context.xxxs),
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: imageProvider,
+    return Hero(
+      tag: tvShow.id!,
+      child: GestureDetector(
+        onTap: onTap,
+        child: AspectRatio(
+          aspectRatio: 0.7,
+          child: Stack(
+            children: [
+              CachedNetworkImage(
+                imageUrl: tvShow.image?.original ?? StringConstants.empty,
+                imageBuilder: (context, imageProvider) => Container(
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).cardColor,
+                    borderRadius: BorderRadius.circular(context.xxxs),
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: imageProvider,
+                    ),
                   ),
                 ),
-              ),
-              placeholder: (_, url) => const Center(child: SafeLoading()),
-              errorWidget: (_, url, error) => const Center(
-                child: Icon(Icons.error),
-              ),
-            ),
-            //TODO add like button
-            // Positioned(
-            //   top: context.xxs,
-            //   right: context.xxxxxs,
-            //   child: ElevatedButton(
-            //     onPressed: () {},
-            //     style: ElevatedButton.styleFrom(
-            //       fixedSize: const Size(50, 50),
-            //       shape: const CircleBorder(),
-            //     ),
-            //     child: const Icon(Icons.thumb_up_rounded),
-            //   ),
-            // ),
-            Positioned.fill(
-              child: Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Colors.transparent,
-                      Colors.grey.shade800.withOpacity(0.3),
-                    ],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                  ),
-                  borderRadius: BorderRadius.circular(context.xxxs),
+                placeholder: (_, url) => const Center(child: SafeLoading()),
+                errorWidget: (_, url, error) => const Center(
+                  child: Icon(Icons.error),
                 ),
-                child: Padding(
-                  padding: EdgeInsets.all(context.xxs),
-                  child: Align(
-                    alignment: Alignment.bottomLeft,
-                    child: Text(
-                      tvShow.name!,
-                      style: context.h6!.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey.shade200,
+              ),
+              Positioned.fill(
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Colors.transparent,
+                        Colors.grey.shade800.withOpacity(0.3),
+                      ],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    ),
+                    borderRadius: BorderRadius.circular(context.xxxs),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(context.xxs),
+                    child: Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Text(
+                        tvShow.name!,
+                        style: context.h6!.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey.shade200,
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

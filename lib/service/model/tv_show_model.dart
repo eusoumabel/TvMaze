@@ -12,6 +12,7 @@ class TvShowModel {
   RatingModel? rating;
   NetworkModel? network;
   ImageModel? image;
+  int? averageRuntime;
 
   TvShowModel({
     this.id,
@@ -27,6 +28,7 @@ class TvShowModel {
     this.network,
     this.image,
     this.summary,
+    this.averageRuntime,
   });
 
   factory TvShowModel.fromJson(dynamic json) {
@@ -39,6 +41,7 @@ class TvShowModel {
       premiered: json['premiered'],
       ended: json['ended'],
       officialSite: json['officialSite'],
+      averageRuntime: json['averageRuntime'],
       schedule: json['schedule'] != null
           ? ScheduleModel.fromJson(json['schedule'])
           : null,
