@@ -2,6 +2,13 @@
 
 An app that uses the TvMaze API to display clearer information to users.
 
+## Light
+
+![Light](https://user-images.githubusercontent.com/51540772/219980781-9f7ec44e-5b76-4ed1-946a-134f4a64b413.png)
+
+## Dark
+
+![Dark](https://user-images.githubusercontent.com/51540772/219980792-9b786db7-e7bd-4280-afaa-0a9079287761.png)
 
 ## Getting Started
 
@@ -43,13 +50,6 @@ Run the project
 ```
 
 
-<!--## Screenshots
-
-* The screenshots were taken from an IOS emulator.
-
--->
-
-
 ## Tech Stack
 
 This project was developed using **Flutter**. The state manegement tool used was **Change Notifier** alongside with the **Flutter Modular** for dependency injection and **Clean Architecture**.
@@ -81,6 +81,7 @@ the following information:
   - Season
   - Summary
   - Image
+- [X] Light and Dark theme defined by the system
 
 
 ## Authors
