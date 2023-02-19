@@ -4,8 +4,23 @@
     "exceptionTvShowsNotFound": "Exception: We didn't find any tv shows that matches the search.",
     "errorTvShows":"Something went wrong, try again soon",
     "errorFailureToSearchTvShows": "Error: Failure to search TV shows",
+    "errorFailureToGetEpisodes": "Error: Failure to get episodes",
 
     "textSearch": "Search",
     "textAllTvShows": "All TV Shows",
-    "textSearchShows": "Search TV Shows"
+    "textSearchShows": "Search TV Shows",
+    "textSchedule": "Schedule",
+    "textSummary": "Summary",
+    "textSeeMore": "See more",
+    "textSeeLess": "See less",
+    "textGenres": "Genres",
+    "textRating": "Rating",
+    "textMinPerEpisode": "min per episode",
+    "textSeasons": "Seasons",
+    "textSeason": "Season {index}",
+    "textEpisodes": "Episodes",
+    "textNoSeasons": "No seasons",
+    "textNoEpisodes": "No episodes",
+    "textEdisodeNum": "Episode {index}",
+     "textTvMaze": "TV Maze"
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:tv_maze/app/design/widgets/safe_snack_bar.dart';
+import 'package:tv_maze/app/modules/tv_show/presenter/page/tv_show_page.dart';
+import 'package:tv_maze/domain/entities/tv_show_entity.dart';
 import 'package:tv_maze/domain/use_case/get_tv_show_list_use_case.dart';
 import 'package:tv_maze/app/modules/home/presenter/store/home_store.dart';
 import 'package:tv_maze/app/modules/search/presenter/page/search_page.dart';
@@ -9,7 +11,7 @@ import 'package:tv_maze/core/interfaces/safe_bloc.dart';
 class HomeController extends SafeController {
   final HomeStore store;
   final SafeSnackBar safeSnackBar;
-  final GetTvShowUseCase getTvShowUseCase;
+  final GetTvShowListUseCase getTvShowUseCase;
 
   HomeController({
     required this.store,
@@ -19,6 +21,7 @@ class HomeController extends SafeController {
 
   @override
   Future<void> init() async {
+    logInfo(value: Modular.to.path);
     await getTvShowList();
   }
 
@@ -36,6 +39,7 @@ class HomeController extends SafeController {
   }
 
   void goToTheTop() {
+    logInfo();
     store.scrollController.animateTo(
       0,
       duration: const Duration(milliseconds: 500),
@@ -45,11 +49,20 @@ class HomeController extends SafeController {
 
   void goToSearchPage() {
     logInfo();
-    Modular.to.pushNamed(SearchPage.route);
+    Modular.to.pushNamed(Modular.to.path + SearchPage.route);
+  }
+
+  void goToTvShow({required TvShowEntity tvShow}) {
+    logInfo();
+    Modular.to.pushNamed(
+      Modular.to.path + TvShowPage.route,
+      arguments: tvShow,
+    );
   }
 
   @override
   Future<void> dispose() async {
+    logInfo();
     store.clear();
   }
 }

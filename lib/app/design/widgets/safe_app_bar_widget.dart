@@ -9,6 +9,7 @@ class SafeAppBarWidget extends StatelessWidget with PreferredSizeWidget {
   final bool leading;
   final String title;
   final bool centerTitle;
+  final TextStyle? style;
   const SafeAppBarWidget({
     super.key,
     this.title = StringConstants.empty,
@@ -16,6 +17,7 @@ class SafeAppBarWidget extends StatelessWidget with PreferredSizeWidget {
     this.centerTitle = false,
     this.leading = false,
     this.actions,
+    this.style,
   });
 
   @override
@@ -24,13 +26,15 @@ class SafeAppBarWidget extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: context.xs),
+      padding: EdgeInsets.symmetric(vertical: context.xs),
       child: AppBar(
         elevation: 0,
         centerTitle: centerTitle,
         title: Text(
           title,
-          style: context.h6!.copyWith(fontWeight: FontWeight.bold),
+          style: style ?? context.h6!.copyWith(fontWeight: FontWeight.bold),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
         ),
         leading: leading
             ? IconButton(
@@ -40,8 +44,8 @@ class SafeAppBarWidget extends StatelessWidget with PreferredSizeWidget {
             : null,
         automaticallyImplyLeading: automaticallyImplyLeading,
         actions: actions,
-        surfaceTintColor: Theme.of(context).backgroundColor,
-        backgroundColor: Theme.of(context).backgroundColor,
+        surfaceTintColor: Theme.of(context).scaffoldBackgroundColor,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       ),
     );
   }

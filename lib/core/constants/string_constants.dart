@@ -21,7 +21,7 @@ class StringConstants {
   static const String cpfMask = '###.###.###-##';
   static const String cnpjMask = '##.###.###/####-##';
   static const String cepMask = '#####-###';
-  static const String more = '...';
+  static const String ellipsis = '...';
 
   //Review
   static const String warning = 'WARNING';
