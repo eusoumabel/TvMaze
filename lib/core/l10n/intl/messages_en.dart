@@ -23,7 +23,17 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "errorFailureToGetTvShows": MessageLookupByLibrary.simpleMessage(
             "Error: Failure to get TV shows"),
+        "errorFailureToSearchTvShows": MessageLookupByLibrary.simpleMessage(
+            "Error: Failure to search TV shows"),
+        "errorTvShows": MessageLookupByLibrary.simpleMessage(
+            "Something went wrong, try again soon"),
+        "errorTvShowsNotFound": MessageLookupByLibrary.simpleMessage(
+            "We didn\'t find any tv shows that matches the search."),
+        "exceptionTvShowsNotFound": MessageLookupByLibrary.simpleMessage(
+            "Exception: We didn\'t find any tv shows that matches the search."),
         "textAllTvShows": MessageLookupByLibrary.simpleMessage("All TV Shows"),
-        "textSearch": MessageLookupByLibrary.simpleMessage("Search")
+        "textSearch": MessageLookupByLibrary.simpleMessage("Search"),
+        "textSearchShows":
+            MessageLookupByLibrary.simpleMessage("Search TV Shows")
       };
 }
