@@ -21,7 +21,7 @@ class GetSeasonQtdtUseCase extends SafeUseCase {
       },
       (failure) {
         logError(error: failure);
-        return Failure(Exception(S.current.errorFailureToGetTvShows));
+        return Failure(Exception(S.current.errorFailureToGetEpisodes));
       },
     );
   }
