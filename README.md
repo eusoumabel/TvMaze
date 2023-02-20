@@ -82,6 +82,7 @@ the following information:
   - Summary
   - Image
 - [X] Light and Dark theme defined by the system
+- [X] Unit tests for the domain layer
 
 
 ## Authors
